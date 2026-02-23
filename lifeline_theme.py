@@ -56,9 +56,9 @@ LIGHT_MELLOW_YELLOW = "#FAE2B5"
 LIGHT_CALM_BEIGE = "#FBF9F4"
 
 # Neutral tones derived from brand
-_GRID_COLOR = "#DDD5C5"       # warm gridlines matching Calm Beige
+_GRID_COLOR = "#DDD5C5"  # warm gridlines matching Calm Beige
 _ZERO_LINE_COLOR = "#C8BEA8"  # slightly darker zero line
-_AXIS_COLOR = "#8080BB"        # muted blue-toned axis lines / ticks
+_AXIS_COLOR = "#8080BB"  # muted blue-toned axis lines / ticks
 
 # All text uses Support Blue — the brand's primary typography colour
 _FONT_COLOR = SUPPORT_BLUE
@@ -112,7 +112,7 @@ _layout = go.Layout(
         ),
         x=0.0,
         xanchor="left",
-        pad=dict(t=0, l=16, b=12),
+        pad=dict(t=0, l=48, b=12),
     ),
     xaxis=dict(
         gridcolor=_GRID_COLOR,
@@ -181,11 +181,13 @@ def inject_fonts() -> None:
         from IPython.display import HTML, display
 
         display(
-            HTML(f"""
+            HTML(
+                f"""
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{_FONTS_CSS_URL}" rel="stylesheet">
-""")
+"""
+            )
         )
     except ImportError:
         pass
@@ -327,5 +329,9 @@ def canonical_page_path(series, *, fallback: str = "(unknown)"):
     import pandas as pd
 
     if hasattr(series, "map"):
-        return series.map(lambda value: normalize_url_for_join(value, fallback=fallback))
-    return pd.Series([normalize_url_for_join(value, fallback=fallback) for value in series])
+        return series.map(
+            lambda value: normalize_url_for_join(value, fallback=fallback)
+        )
+    return pd.Series(
+        [normalize_url_for_join(value, fallback=fallback) for value in series]
+    )
