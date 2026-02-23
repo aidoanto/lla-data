@@ -31,6 +31,8 @@ from urllib.parse import urlparse
 import plotly.graph_objects as go
 import plotly.io as pio
 
+from lla_data.url_utils import normalize_url_for_join
+
 # ---------------------------------------------------------------------------
 # Brand colours
 # ---------------------------------------------------------------------------
@@ -318,3 +320,12 @@ def strip_domain(series, *, keep_query: bool = True, fallback: str = "(unknown)"
     if hasattr(series, "map"):
         return series.map(_clean)
     return pd.Series([_clean(u) for u in series])
+
+
+def canonical_page_path(series, *, fallback: str = "(unknown)"):
+    """Map URL-like values to canonical page paths for cross-dataset joins."""
+    import pandas as pd
+
+    if hasattr(series, "map"):
+        return series.map(lambda value: normalize_url_for_join(value, fallback=fallback))
+    return pd.Series([normalize_url_for_join(value, fallback=fallback) for value in series])
