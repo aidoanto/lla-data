@@ -1,5 +1,46 @@
 # LLA Data
 
+## Start Here (No Technical Background Needed)
+
+This project is a set of ready-to-run notebooks for understanding website performance (traffic, search visibility, and user behavior).
+
+If you are new to coding, the easiest way to use this project is **Google Colab**. You can click a notebook link below and run it in your browser.
+
+### Open In Colab
+
+- **Search contribution over time**  
+  [01_search_contribution_overview.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/seo/01_search_contribution_overview.ipynb)
+- **Top pages from search**  
+  [02_top_pages_search_performance.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/seo/02_top_pages_search_performance.ipynb)
+- **Queries that drive a specific page**  
+  [03_query_drivers_by_page.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/seo/03_query_drivers_by_page.ipynb)
+- **SEO opportunity watchlist**  
+  [04_opportunity_watchlist.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/seo/04_opportunity_watchlist.ipynb)
+- **Top pages in the last 7 days**  
+  [top_pages_last_7_days.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/top_pages_last_7_days.ipynb)
+- **Traffic source quality**  
+  [traffic_sources.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/traffic_sources.ipynb)
+- **Time patterns for crisis-related pages**  
+  [time_patterns.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/time_patterns.ipynb)
+- **Crisis support funnel**  
+  [crisis_funnel.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/crisis_funnel.ipynb)
+- **Blank starter notebook**  
+  [analysis_template.ipynb](https://colab.research.google.com/github/aidanm-lla/lla-data/blob/main/notebooks/templates/analysis_template.ipynb)
+
+### Quick Getting Started (Colab)
+
+1. Open any notebook link above.
+2. Run the **Setup (run once)** cell.
+3. If the notebook has a **Parameters** cell, edit the values (for example `DAYS_BACK = 28`).
+4. Run the remaining cells from top to bottom.
+5. Read the chart/table outputs and use them in your reporting.
+
+### Project Link
+
+- GitHub repo: [github.com/aidanm-lla/lla-data](https://github.com/aidanm-lla/lla-data)
+
+## Technical Details
+
 A workspace for **Lifeline Australia’s Digital team** to analyse web traffic in BigQuery with notebooks.
 
 The repo now supports two primary data sources:
@@ -134,7 +175,3 @@ More detail:
 ## Data Freshness Note
 
 Search Console export has a natural lag and your import only started recently, so early outputs will have sparse history. Prefer trend windows that match available data (for example, 7-28 days at the start), then expand as history accumulates.
-
----
-
-For BigQuery access questions, contact the Lifeline Digital team.
