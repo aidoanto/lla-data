@@ -1,5 +1,5 @@
 -- Curated Search Console query-by-page daily metrics.
--- Source table: lifeline-website-480522.searchconsole.searchdata_url_impression
+-- Source view: lifeline-website-480522.searchconsole.searchdata_url_impression_all
 -- Destination table: lifeline-website-480522.searchconsole.curated_search_query_page_daily
 
 CREATE OR REPLACE TABLE `lifeline-website-480522.searchconsole.curated_search_query_page_daily`
@@ -24,7 +24,7 @@ WITH normalized AS (
       WHEN STARTS_WITH(url, '/') THEN url
       ELSE CONCAT('/', url)
     END AS page_path_raw
-  FROM `lifeline-website-480522.searchconsole.searchdata_url_impression`
+  FROM `lifeline-website-480522.searchconsole.searchdata_url_impression_all`
 ),
 cleaned AS (
   SELECT

@@ -1,5 +1,5 @@
 -- Curated Search Console site-level daily metrics.
--- Source table: lifeline-website-480522.searchconsole.searchdata_site_impression
+-- Source view: lifeline-website-480522.searchconsole.searchdata_site_impression_all
 -- Destination table: lifeline-website-480522.searchconsole.curated_search_site_daily
 
 CREATE OR REPLACE TABLE `lifeline-website-480522.searchconsole.curated_search_site_daily`
@@ -15,6 +15,6 @@ SELECT
   SUM(impressions) AS impressions,
   SAFE_DIVIDE(SUM(clicks), SUM(impressions)) AS ctr,
   SAFE_DIVIDE(SUM(sum_top_position), SUM(impressions)) + 1 AS avg_position
-FROM `lifeline-website-480522.searchconsole.searchdata_site_impression`
+FROM `lifeline-website-480522.searchconsole.searchdata_site_impression_all`
 GROUP BY report_date, site_url, search_type, country, device;
 

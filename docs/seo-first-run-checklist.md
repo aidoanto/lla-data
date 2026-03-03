@@ -76,6 +76,9 @@ Look for:
 - Near-zero null-rate for `page_path` and `report_date`
 - Zero duplicates at (`report_date`, `page_path`) in `seo_page_daily`
 
+Historical data note:
+- If your Search Console export started recently and history is sparse, run the one-time backfill in `docs/searchconsole-historical-backfill.md`, then rebuild curated models.
+
 ## 6) First Notebook Smoke Run
 
 Run these notebooks in order:

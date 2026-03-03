@@ -17,7 +17,7 @@ WITH gsc AS (
     SAFE_DIVIDE(SUM(clicks), SUM(impressions)) AS gsc_ctr,
     SAFE_DIVIDE(SUM(avg_position * impressions), NULLIF(SUM(impressions), 0)) AS gsc_avg_position
   FROM `lifeline-website-480522.searchconsole.curated_search_url_daily`
-  WHERE search_type = 'WEB'
+  WHERE UPPER(search_type) = 'WEB'
   GROUP BY report_date, page_path
 ),
 ga4 AS (

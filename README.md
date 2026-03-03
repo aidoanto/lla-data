@@ -168,6 +168,7 @@ For most new analyses:
 More detail:
 - `docs/ga4-bigquery-access-guardrails.md`
 - `docs/searchconsole-data-dictionary.md`
+- `docs/searchconsole-historical-backfill.md`
 - `docs/seo-metrics-definitions.md`
 - `docs/notebook-usage-guide.md`
 - `docs/seo-first-run-checklist.md`
@@ -175,3 +176,5 @@ More detail:
 ## Data Freshness Note
 
 Search Console export has a natural lag and your import only started recently, so early outputs will have sparse history. Prefer trend windows that match available data (for example, 7-28 days at the start), then expand as history accumulates.
+
+If you enabled export recently and need older history, use the API backfill flow in `docs/searchconsole-historical-backfill.md`.
