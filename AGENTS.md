@@ -1,1 +1,1 @@
-I am Aidan, a digital producer at Lifeline Australia. This repo is a space for me to explore and analyse our web data from GA and GSC in Python, using APIs from Google Cloud and GSC.
+I am Aidan, a digital producer at Lifeline Australia. This repo is a space for me to explore and analyse our web data from GA and GSC in Python, using APIs from Google Cloud and GSC. The relevant Google Cloud project is 'lifeline-website-480522'.
