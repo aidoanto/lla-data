@@ -10,6 +10,12 @@ Use this guide to keep notebook analysis consistent, reliable, and cost-aware.
 4. Validate row counts and key columns.
 5. Build charts only after metric checks look correct.
 
+## Notebook Layout And Naming
+
+- Keep analysis notebooks in `notebooks/` (no subfolders for active analysis notebooks).
+- Use sequential numeric prefixes in run order: `01_`, `02_`, `03_`, and so on.
+- Keep the setup/parameter pattern consistent so notebooks are easy to hand over.
+
 ## Import Pattern
 
 Use this at the top of notebooks:
@@ -21,7 +27,14 @@ sys.path.insert(0, "../..")
 
 import lifeline_theme
 from lla_data import config
-from lla_data.bq import get_client, run_query, dry_run_bytes, default_query_window, build_date_params
+from lla_data.bq import (
+    get_client,
+    run_query,
+    dry_run_bytes,
+    default_query_window,
+    build_date_params,
+    load_sql_template,
+)
 ```
 
 Why:
@@ -31,10 +44,25 @@ Why:
 
 ## Query Guardrails
 
+- Put non-trivial SQL in `sql/notebooks/*.sql`; keep notebook cells focused on parameters + analysis.
+- Use `load_sql_template(...)` to load SQL templates and only format identifiers there.
 - Prefer curated tables over raw `events_*`.
 - Always parameterize date filters (`@start_date`, `@end_date`).
 - Add reasonable thresholds for decision dashboards (impressions/session minimums).
 - Use `SAFE_DIVIDE` in SQL metrics to avoid divide-by-zero errors.
+- Avoid f-string value interpolation for dates, limits, or user-provided values.
+
+## SQL Consolidation Rules
+
+- Reuse shared SQL templates when the business logic is the same across notebooks.
+- Keep one-off SQL in separate files only when reuse would hurt readability.
+- Use clear names in `sql/notebooks/` such as `seo_<topic>_<purpose>.sql` and `ga4_<topic>_<purpose>.sql`.
+
+## SQL vs BigFrames
+
+- Default to SQL for BigQuery-native logic (`UNNEST`, `_TABLE_SUFFIX`, complex CTE chains).
+- Use BigFrames selectively for pandas-like exploration after core query results are defined.
+- Keep BigFrames usage optional in notebooks unless the dependency is already required for the workflow.
 
 ## Chart Guardrails
 

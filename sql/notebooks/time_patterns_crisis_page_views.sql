@@ -21,8 +21,8 @@ WITH page_views AS (
       ), '(unknown)') AS page_location
     FROM `{project_id}.{ga4_dataset}.events_*`
     WHERE event_name = 'page_view'
-      AND _TABLE_SUFFIX BETWEEN FORMAT_DATE('%Y%m%d', DATE_SUB(CURRENT_DATE(), INTERVAL {days_back} DAY))
-      AND FORMAT_DATE('%Y%m%d', CURRENT_DATE())
+      AND _TABLE_SUFFIX BETWEEN FORMAT_DATE('%Y%m%d', DATE(@start_date))
+      AND FORMAT_DATE('%Y%m%d', DATE(@end_date))
   )
 ), cleaned AS (
   SELECT

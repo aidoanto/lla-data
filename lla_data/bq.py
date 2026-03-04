@@ -4,12 +4,16 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date, timedelta
+from pathlib import Path
 from typing import Iterable
 
 import pandas as pd
 from google.cloud import bigquery
 
 from lla_data.config import BIGQUERY_LOCATION, PROJECT_ID
+
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 @dataclass(frozen=True)
@@ -38,6 +42,18 @@ def build_date_params(window: QueryWindow) -> list[bigquery.ScalarQueryParameter
 def get_client(project_id: str = PROJECT_ID, location: str = BIGQUERY_LOCATION) -> bigquery.Client:
     """Create a BigQuery client with project and location defaults."""
     return bigquery.Client(project=project_id, location=location)
+
+
+def load_sql_template(relative_sql_path: str, **format_kwargs: str) -> str:
+    """Load a SQL template from repo root and format identifier placeholders.
+
+    Query values (dates, strings, limits) should still be passed as query parameters.
+    """
+    sql_path = REPO_ROOT / relative_sql_path
+    template = sql_path.read_text(encoding="utf-8")
+    if not format_kwargs:
+        return template
+    return template.format(**format_kwargs)
 
 
 def dry_run_bytes(
