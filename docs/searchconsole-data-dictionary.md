@@ -45,6 +45,17 @@ Common columns used:
 
 ## Curated Tables In This Repo
 
+Recommended analyst-facing entry points:
+
+- `seo_page_daily` for page-level SEO work (default)
+- `curated_search_query_page_daily` for query-level work
+
+Pipeline/internal layers (ingestion and model plumbing):
+
+- `searchdata_*` live export tables
+- `searchdata_*_backfill` API backfill tables
+- `searchdata_*_all` combined views used by curated model SQL
+
 ### `curated_search_site_daily`
 
 Built by `sql/gsc_curated_site_daily.sql`.

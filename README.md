@@ -24,3 +24,22 @@ Each notebook will have instructions on how to run it, but the basic process is 
 - **SXO page and query dynamics**: `08_sxo_page_query_dynamics.ipynb`
 
 For technical details, see `INFO.md`.
+
+## Canonical Table Map
+
+Use these as your default notebook sources:
+
+- `searchconsole.seo_page_daily` - primary page-level SEO analysis table (GSC + GA4 joined)
+- `searchconsole.curated_search_query_page_daily` - query-level table for page/query dynamics
+
+These are pipeline plumbing tables and are usually not queried directly in notebooks:
+
+- `searchconsole.searchdata_site_impression` and `searchconsole.searchdata_url_impression` (live raw export)
+- `searchconsole.searchdata_site_impression_backfill` and `searchconsole.searchdata_url_impression_backfill` (API backfill)
+- `searchconsole.searchdata_site_impression_all` and `searchconsole.searchdata_url_impression_all` (combined raw + backfill views feeding curated models)
+
+Simple rule of thumb:
+
+- Page-level trend question -> `seo_page_daily`
+- Query-term question -> `curated_search_query_page_daily`
+- Data ingestion/debug question -> `searchdata_*`

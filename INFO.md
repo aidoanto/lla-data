@@ -25,6 +25,26 @@ Expected GSC source tables:
 - `searchconsole.searchdata_site_impression`
 - `searchconsole.searchdata_url_impression`
 
+## Canonical Table Map
+
+For day-to-day analysis, treat these as canonical:
+
+- `searchconsole.seo_page_daily` (default page-level SEO table for notebooks)
+- `searchconsole.curated_search_query_page_daily` (query-level table when query terms are required)
+
+Treat these as pipeline/internal layers:
+
+- Raw live export: `searchconsole.searchdata_site_impression`, `searchconsole.searchdata_url_impression`
+- Historical backfill: `searchconsole.searchdata_site_impression_backfill`, `searchconsole.searchdata_url_impression_backfill`
+- Combined ingestion views: `searchconsole.searchdata_site_impression_all`, `searchconsole.searchdata_url_impression_all`
+- Curated feeder tables: `searchconsole.curated_search_site_daily`, `searchconsole.curated_search_url_daily`
+
+Practical usage:
+
+- Use `seo_page_daily` for page-level trend and opportunity analysis.
+- Use `curated_search_query_page_daily` for query/page movement analysis.
+- Avoid querying `searchdata_*` directly unless validating ingestion or troubleshooting data gaps.
+
 ## Architecture
 
 ```mermaid
