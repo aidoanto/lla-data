@@ -142,7 +142,7 @@ Before formulating a strategy, we’ll need to analyse the data we have, researc
 
 - Use SQL to find GSC queries where you rank 8-15 (page two) with significant impressions—these are your quick wins. Analyze GA landing page data for articles with high bounce rate but long time-on-page (confusing navigation vs. helpful content).
 - Discover which mental health topics have search demand but thin content on your site. Understand if users who read one article progress to related content or exit.
-- Build a scatter plot of all support articles: x-axis = organic traffic, y-axis = average engagement time. Add a filter for topic category. Include a separate table flagging articles ranking on page two.
+- Build a scatter plot of all support articles: x-axis = organic traffic, y-axis = average engagement time.
 
 ### Support services
 

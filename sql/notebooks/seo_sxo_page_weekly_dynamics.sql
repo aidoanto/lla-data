@@ -7,7 +7,10 @@ WITH base AS (
     gsc_avg_position
   FROM `{project_id}.{searchconsole_dataset}.seo_page_daily`
   WHERE report_date BETWEEN DATE(@start_date) AND DATE(@end_date)
-    AND (@include_homepage OR page_path != "/")
+    AND (
+      ARRAY_LENGTH(@excluded_page_paths) = 0
+      OR page_path NOT IN UNNEST(@excluded_page_paths)
+    )
 ),
 top_pages AS (
   SELECT

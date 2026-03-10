@@ -18,7 +18,10 @@ base AS (
   WHERE q.report_date BETWEEN DATE(@start_date) AND b.end_date
     AND q.query IS NOT NULL
     AND TRIM(q.query) != ""
-    AND (@include_homepage OR q.page_path != "/")
+    AND (
+      ARRAY_LENGTH(@excluded_page_paths) = 0
+      OR q.page_path NOT IN UNNEST(@excluded_page_paths)
+    )
 ),
 top_pages AS (
   SELECT
