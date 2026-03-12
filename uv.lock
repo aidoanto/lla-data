@@ -1457,6 +1457,7 @@ dependencies = [
     { name = "pandas" },
     { name = "plotly" },
     { name = "pytest" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -1471,6 +1472,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=3.0.1" },
     { name = "plotly", specifier = ">=6.5.2" },
     { name = "pytest", specifier = ">=8.4.2" },
+    { name = "requests", specifier = ">=2.32.5" },
 ]
 
 [[package]]

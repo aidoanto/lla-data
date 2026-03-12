@@ -1,0 +1,285 @@
+{
+  "version": "0.1.20260311",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "2.8034 sec.",
+  "cost": 0.075,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "03120448-1482-0368-0000-18c9a7fefc09",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "2.7479 sec.",
+      "cost": 0.075,
+      "result_count": 3,
+      "path": [
+        "v3",
+        "keywords_data",
+        "google_ads",
+        "keywords_for_keywords",
+        "live"
+      ],
+      "data": {
+        "api": "keywords_data",
+        "function": "keywords_for_keywords",
+        "se": "google_ads",
+        "location_name": "Australia",
+        "language_name": "English",
+        "keywords": [
+          "attention defecit disorder"
+        ]
+      },
+      "result": [
+        {
+          "keyword": "attention defecit disorder",
+          "location_code": 2036,
+          "language_code": "en",
+          "search_partners": false,
+          "competition": null,
+          "competition_index": null,
+          "search_volume": 10,
+          "low_top_of_page_bid": null,
+          "high_top_of_page_bid": null,
+          "cpc": null,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 0
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 4,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 3,
+              "search_volume": 10
+            }
+          ],
+          "keyword_annotations": {
+            "concepts": null
+          }
+        },
+        {
+          "keyword": "attention defecit",
+          "location_code": 2036,
+          "language_code": "en",
+          "search_partners": false,
+          "competition": "LOW",
+          "competition_index": 6,
+          "search_volume": 210,
+          "low_top_of_page_bid": 0.03,
+          "high_top_of_page_bid": 1.06,
+          "cpc": 0.03,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 170
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 140
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 170
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 4,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 3,
+              "search_volume": 260
+            }
+          ],
+          "keyword_annotations": {
+            "concepts": [
+              {
+                "name": "Non-Brands",
+                "concept_group": {
+                  "name": "Non-Brands",
+                  "type": "NON_BRAND"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "keyword": "attention defecit hyperactive disorder",
+          "location_code": 2036,
+          "language_code": "en",
+          "search_partners": false,
+          "competition": "LOW",
+          "competition_index": 0,
+          "search_volume": 10,
+          "low_top_of_page_bid": null,
+          "high_top_of_page_bid": null,
+          "cpc": null,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 10
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 4,
+              "search_volume": 0
+            },
+            {
+              "year": 2025,
+              "month": 3,
+              "search_volume": 10
+            }
+          ],
+          "keyword_annotations": {
+            "concepts": [
+              {
+                "name": "Non-Brands",
+                "concept_group": {
+                  "name": "Non-Brands",
+                  "type": "NON_BRAND"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

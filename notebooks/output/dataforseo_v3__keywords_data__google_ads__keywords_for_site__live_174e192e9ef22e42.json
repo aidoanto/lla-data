@@ -1,0 +1,36 @@
+{
+  "version": "0.1.20260311",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.5868 sec.",
+  "cost": 0.075,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "03120439-1482-0369-0000-6093d8e6bdf7",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "3.5328 sec.",
+      "cost": 0.075,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "keywords_data",
+        "google_ads",
+        "keywords_for_site",
+        "live"
+      ],
+      "data": {
+        "api": "keywords_data",
+        "function": "keywords_for_site",
+        "se": "google_ads",
+        "location_name": "Australia",
+        "language_name": "English",
+        "target": "https://www.lifeline.org.au/get-help/support-toolkit/anxiety",
+        "target_type": "page"
+      },
+      "result": null
+    }
+  ]
+}

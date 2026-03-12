@@ -16,3 +16,7 @@ BIGQUERY_LOCATION = os.getenv("LLA_BIGQUERY_LOCATION", "australia-southeast1")
 DEFAULT_DAYS_BACK = int(os.getenv("LLA_DEFAULT_DAYS_BACK", "28"))
 DEFAULT_TOP_N = int(os.getenv("LLA_DEFAULT_TOP_N", "25"))
 
+# Site and external keyword research defaults.
+SITE_BASE_URL = os.getenv("LLA_SITE_BASE_URL", "https://www.lifeline.org.au")
+DEFAULT_KEYWORD_LOCATION = os.getenv("LLA_DEFAULT_KEYWORD_LOCATION", "Australia")
+DEFAULT_KEYWORD_LANGUAGE = os.getenv("LLA_DEFAULT_KEYWORD_LANGUAGE", "English")
