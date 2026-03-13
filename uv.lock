@@ -689,6 +689,25 @@ wheels = [
 ]
 
 [[package]]
+name = "google-ads"
+version = "29.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-api-core" },
+    { name = "google-auth-oauthlib" },
+    { name = "googleapis-common-protos" },
+    { name = "grpcio" },
+    { name = "grpcio-status" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+    { name = "pyyaml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/44/eb/92edcc232060fc3bdee6f3f147f986db844083b157794658e9bb6ff05cc9/google_ads-29.2.0.tar.gz", hash = "sha256:d2331f2a79447792f80ce2a17f46eebc4003d3e4228b2e580e20af313dce8ed0", size = 9628865, upload-time = "2026-02-25T21:37:44.799Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/61/a3/4f3cef090c97dd307048b6e3075cdc45f913584c32c6a8d45de71ad31702/google_ads-29.2.0-py3-none-any.whl", hash = "sha256:264d98b5a08158702d91248be633e104436da522b2a513fc90f983e39553380d", size = 18308345, upload-time = "2026-02-25T21:37:41.956Z" },
+]
+
+[[package]]
 name = "google-api-core"
 version = "2.29.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1449,6 +1468,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "bigframes" },
     { name = "db-dtypes" },
+    { name = "google-ads" },
     { name = "google-api-python-client" },
     { name = "google-cloud-bigquery" },
     { name = "ipykernel" },
@@ -1463,6 +1483,7 @@ dependencies = [
 requires-dist = [
     { name = "bigframes", specifier = ">=2.37.0" },
     { name = "db-dtypes", specifier = ">=1.4.4" },
+    { name = "google-ads", specifier = ">=29.2.0" },
     { name = "google-api-python-client", specifier = ">=2.191.0" },
     { name = "google-cloud-bigquery", specifier = ">=3.40.1" },
     { name = "ipykernel", specifier = ">=7.2.0" },

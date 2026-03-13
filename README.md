@@ -22,6 +22,8 @@ Each notebook will have instructions on how to run it, but the basic process is 
 - **Time patterns for crisis-related pages**: `06_time_patterns.ipynb`
 - **Top search queries (sitewide)**: `07_top_search_queries_sitewide.ipynb`
 - **SXO page and query dynamics**: `08_sxo_page_query_dynamics.ipynb`
+- **Keyword expansion from page**: `14_keyword_expansion_from_page.ipynb`
+- **Keyword scoping from seed**: `15_keyword_scoping_from_seed.ipynb`
 
 For technical details, see `INFO.md`.
 

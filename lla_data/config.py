@@ -15,4 +15,4 @@ BIGQUERY_LOCATION = os.getenv("LLA_BIGQUERY_LOCATION", "australia-southeast1")
 # Notebook defaults.
 DEFAULT_DAYS_BACK = int(os.getenv("LLA_DEFAULT_DAYS_BACK", "28"))
 DEFAULT_TOP_N = int(os.getenv("LLA_DEFAULT_TOP_N", "25"))
-
+SITE_URL = os.getenv("LLA_SITE_URL", "https://www.lifeline.org.au/")
