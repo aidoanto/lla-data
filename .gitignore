@@ -11,3 +11,6 @@ wheels/
 .env
 
 .ipynb_checkpoints/
+
+!notebooks/output/.gitkeep
+notebooks/output/
