@@ -14,3 +14,7 @@ wheels/
 
 !notebooks/output/.gitkeep
 notebooks/output/
+
+*.png
+*.jpg
+*.jpeg
