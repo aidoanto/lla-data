@@ -5,7 +5,14 @@ from __future__ import annotations
 import os
 
 
-PROJECT_ID = os.getenv("LLA_PROJECT_ID", "lifeline-website-480522")
+SEARCHCONSOLE_PROJECT_ID = os.getenv(
+    "LLA_SEARCHCONSOLE_PROJECT_ID",
+    os.getenv("LLA_PROJECT_ID", "lifeline-website-480522"),
+)
+GA4_PROJECT_ID = os.getenv("LLA_GA4_PROJECT_ID", "lifeline-web-analytics")
+
+# Backward-compatible default project for query jobs and legacy code paths.
+PROJECT_ID = SEARCHCONSOLE_PROJECT_ID
 GA4_DATASET = os.getenv("LLA_GA4_DATASET", "analytics_315584957")
 SEARCHCONSOLE_DATASET = os.getenv("LLA_SEARCHCONSOLE_DATASET", "searchconsole")
 

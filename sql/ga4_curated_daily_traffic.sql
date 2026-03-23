@@ -1,9 +1,9 @@
 -- Curated traffic table for reporting and notebook analysis.
 -- Run this as a scheduled query once per day.
 -- Destination table:
---   lifeline-website-480522.analytics_315584957.curated_daily_traffic
+--   {ga4_project_id}.{ga4_dataset}.curated_daily_traffic
 
-CREATE OR REPLACE TABLE `lifeline-website-480522.analytics_315584957.curated_daily_traffic`
+CREATE OR REPLACE TABLE `{ga4_project_id}.{ga4_dataset}.curated_daily_traffic`
 PARTITION BY event_day
 AS
 WITH base AS (
@@ -39,7 +39,7 @@ WITH base AS (
       FROM UNNEST(event_params) ep
       WHERE ep.key = 'medium'
     ), '(none)') AS medium
-  FROM `lifeline-website-480522.analytics_315584957.events_*`
+  FROM `{ga4_project_id}.{ga4_dataset}.events_*`
   WHERE _TABLE_SUFFIX BETWEEN FORMAT_DATE('%Y%m%d', DATE_SUB(CURRENT_DATE(), INTERVAL 35 DAY))
     AND FORMAT_DATE('%Y%m%d', CURRENT_DATE())
 ),
@@ -117,5 +117,4 @@ SELECT
   COUNT(DISTINCT session_key) AS sessions,
   COUNT(DISTINCT IF(event_name = 'page_view', page_path, NULL)) AS unique_pages_viewed
 FROM categorized
-GROUP BY event_day, day_of_week, hour_of_day, source, medium, page_category
-ORDER BY event_day DESC, events DESC;
+GROUP BY event_day, day_of_week, hour_of_day, source, medium, page_category;

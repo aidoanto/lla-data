@@ -1,8 +1,8 @@
 -- Curated GA4 page-level daily traffic metrics.
--- Source table: lifeline-website-480522.analytics_315584957.events_*
--- Destination table: lifeline-website-480522.analytics_315584957.curated_ga4_page_daily
+-- Source table: {ga4_project_id}.{ga4_dataset}.events_*
+-- Destination table: {ga4_project_id}.{ga4_dataset}.curated_ga4_page_daily
 
-CREATE OR REPLACE TABLE `lifeline-website-480522.analytics_315584957.curated_ga4_page_daily`
+CREATE OR REPLACE TABLE `{ga4_project_id}.{ga4_dataset}.curated_ga4_page_daily`
 PARTITION BY event_day
 AS
 WITH base AS (
@@ -22,7 +22,7 @@ WITH base AS (
     COALESCE((SELECT ep.value.string_value FROM UNNEST(event_params) ep WHERE ep.key = 'source'), '(direct)') AS source,
     COALESCE((SELECT ep.value.string_value FROM UNNEST(event_params) ep WHERE ep.key = 'medium'), '(none)') AS medium,
     COALESCE((SELECT ep.value.string_value FROM UNNEST(event_params) ep WHERE ep.key = 'session_engaged'), '0') AS session_engaged
-  FROM `lifeline-website-480522.analytics_315584957.events_*`
+  FROM `{ga4_project_id}.{ga4_dataset}.events_*`
   WHERE _TABLE_SUFFIX BETWEEN FORMAT_DATE('%Y%m%d', DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY))
     AND FORMAT_DATE('%Y%m%d', CURRENT_DATE())
 ),
@@ -74,4 +74,3 @@ SELECT
   COUNT(DISTINCT IF(event_name = 'page_view' AND session_engaged = '1', session_key, NULL)) AS engaged_sessions
 FROM cleaned
 GROUP BY event_day, page_path;
-

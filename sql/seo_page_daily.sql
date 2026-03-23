@@ -1,11 +1,11 @@
 -- Joined SEO page-level daily model (Search Console + GA4).
 -- Sources:
---   lifeline-website-480522.searchconsole.curated_search_url_daily
---   lifeline-website-480522.analytics_315584957.curated_ga4_page_daily
+--   {searchconsole_project_id}.{searchconsole_dataset}.curated_search_url_daily
+--   {ga4_project_id}.{ga4_dataset}.curated_ga4_page_daily
 -- Destination:
---   lifeline-website-480522.searchconsole.seo_page_daily
+--   {searchconsole_project_id}.{searchconsole_dataset}.seo_page_daily
 
-CREATE OR REPLACE TABLE `lifeline-website-480522.searchconsole.seo_page_daily`
+CREATE OR REPLACE TABLE `{searchconsole_project_id}.{searchconsole_dataset}.seo_page_daily`
 PARTITION BY report_date
 AS
 WITH gsc AS (
@@ -16,7 +16,7 @@ WITH gsc AS (
     SUM(impressions) AS gsc_impressions,
     SAFE_DIVIDE(SUM(clicks), SUM(impressions)) AS gsc_ctr,
     SAFE_DIVIDE(SUM(avg_position * impressions), NULLIF(SUM(impressions), 0)) AS gsc_avg_position
-  FROM `lifeline-website-480522.searchconsole.curated_search_url_daily`
+  FROM `{searchconsole_project_id}.{searchconsole_dataset}.curated_search_url_daily`
   WHERE UPPER(search_type) = 'WEB'
   GROUP BY report_date, page_path
 ),
@@ -29,7 +29,7 @@ ga4 AS (
     SUM(users) AS users,
     SUM(page_views) AS page_views,
     SUM(engaged_sessions) AS engaged_sessions
-  FROM `lifeline-website-480522.analytics_315584957.curated_ga4_page_daily`
+  FROM `{ga4_project_id}.{ga4_dataset}.curated_ga4_page_daily`
   GROUP BY report_date, page_path
 ),
 joined AS (
@@ -72,4 +72,3 @@ SELECT
     ELSE 'high-ctr'
   END AS impression_to_click_band
 FROM joined;
-

@@ -12,7 +12,10 @@ from lla_data.bq import get_client, run_query
 
 def main() -> None:
     client = get_client()
-    table = f"`{config.PROJECT_ID}.{config.SEARCHCONSOLE_DATASET}.seo_page_daily`"
+    table = (
+        f"`{config.SEARCHCONSOLE_PROJECT_ID}."
+        f"{config.SEARCHCONSOLE_DATASET}.seo_page_daily`"
+    )
 
     freshness_sql = f"""
     SELECT
